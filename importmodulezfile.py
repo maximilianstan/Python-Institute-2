@@ -58,3 +58,48 @@ print(x)
 x = 100 % 9
 print(x)
 
+# Frexp(x) - Returns the matissa (as a float) and exponent (as an integer) of x
+# scientific notation = matissa * 10 ^ exponent
+# x = matissa * 2 ^ exponent
+
+x = math.frexp(18)
+y = x[0]*(2**x[1])
+print(x)
+print(y)
+
+# Ldexp(x, i) - The reverse of frexp()
+
+z = math.ldexp(x[0], x[1])
+print(z)
+
+# Fsum(iterable) - Returns an accurate floating point sum of values in the iterable
+iterable = [.2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
+x = sum(iterable)
+y = math.fsum(iterable)
+print(x)
+print(y)
+
+# gcd(*integers) - Returns the greatest common divisor of the specified integer arguments
+x = math.gcd(36, 66)
+print(x)
+
+# isclose(a, b, rel_tol, abs_tol) - Returns True if a and b are close to each other and
+#                                   Returns False if otherwise.
+# rel_tol - (default:1e-9). Is multiplied by the largest input value (a or b) and the
+#           smaller input value must be within that range to be considered "close"
+
+a = 3
+b = 4
+
+# a must be between 2 and 4
+
+x = math.isclose(a, b, rel_tol = 0.5)
+print(x)
+
+# a must be between 3.2 and 4
+
+y = math.isclose(a, b, rel_tol = 0.20)
+print(y)
+
+
+
