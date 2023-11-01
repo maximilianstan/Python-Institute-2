@@ -26,3 +26,6 @@ print(python_implementation())
 
 for atr in python_version_tuple():
     print(atr)
+
+import os
+dir(os)
